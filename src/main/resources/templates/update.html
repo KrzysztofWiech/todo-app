@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+
+
+    <title>ToDo App</title>
+</head>
+<body>
+<h1>ToDo App!</h1>
+
+<div th:fragment="table" class="container" xmlns:th="http://www.thymeleaf.org">
+
+    <div class="row">
+        <div class="col-sm-12">
+
+            <form action="/upd" th:object="${toDoTask}">
+                <!--przechodzenie do stront-->
+                <!--<input type="number" name="id" value="">-->
+                <p>Zadanie</p>
+                <input type="text" name="taskName" th:value="${todo.getTaskName()}"/><br>
+                <p>Informacje o zadaniu</p>
+                <input type="text" name="taskInfo" th:value="${todo.getTaskInfo()}"/><br>
+                <p>Data</p>
+                <input type="text" id="datepicker" width="276" name="date" th:vale="${todo.getDate()}"/><br>
+                <script>
+                    $('#datepicker').datepicker({
+                        uiLibrary: 'bootstrap4'
+                    });
+                </script>
+                <!--<input type="date" name="date" value="">-->
+
+
+                <input type="submit" value="Update"/>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

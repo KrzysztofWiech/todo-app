@@ -14,8 +14,6 @@
     <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
 
 
-
-
     <title>ToDo App</title>
 </head>
 <body>
@@ -42,7 +40,6 @@
                 <!--<input type="date" name="date" value="">-->
 
 
-
                 <input type="submit" value="Dodaj"/>
             </form>
 
@@ -64,31 +61,33 @@
                     <td th:text="${t.getTaskInfo()}"></td>
                     <td th:text="${t.getDate()}"></td>
                     <td th:text="${t.getDone()}"></td>
-<!--th parser -->
-
-                <td>
-                    <form action="/delete" method="get">
-                        <input type="hidden" th:value="${t.getTaskName()}" name="todo">
-                        <button class="btn btn-sm btn-warning" type="submit">
-                            <i class="fa fa-trash" aria-hidden="true"></i> Delete
-                        </button>
-                    </form>
-                </td>
+                    <!--th parser -->
 
                     <td>
-                    <form th:action="@{/updatepage}" method="get">
-                        <input type="hidden" th:value="${t.getTaskName()}" name="todo">
-                        <button class="btn btn-sm btn-warning" type="submit">
-                            <i class="fa fa-trash" aria-hidden="true"></i> update
-                        </button>
-                    </form>
-                </td>
+                        <form action="/delete" method="get">
+                            <input type="hidden" th:value="${t.getTaskName()}" name="todo">
+                            <button class="btn btn-sm btn-warning" type="submit">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                            </button>
+                        </form>
+                    </td>
+
+                    <td>
+                        <form th:action="@{/updatepage}" method="get">
+                            <input type="hidden" th:value="${t.getTaskName()}" name="todo">
+                            <button class="btn btn-sm btn-warning" type="submit">
+                                <i class="fa fa-trash" aria-hidden="true"></i> update
+                            </button>
+                        </form>
+                    </td>
 
 
                 </tr>
             </table>
+
         </div>
     </div>
+
 </div>
 
 </body>

@@ -16,7 +16,7 @@ import java.util.Date;
 @Builder
 //Entity baza danych mapuje na encje bazy danych
 @Entity
-//@Table tworzy nam tabelę o nazwie planets
+//@Table tworzy nam tabelę o nazwie
 @Table(name = "liststodo")
 public class ToDoTask {
 

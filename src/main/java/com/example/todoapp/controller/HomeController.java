@@ -3,7 +3,6 @@ package com.example.todoapp.controller;
 
 import com.example.todoapp.model.ToDoTask;
 import com.example.todoapp.services.ToDoService;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -54,5 +53,13 @@ public class HomeController {
         model.addAttribute("todo", toDoTask);
         return "update";
     }
+
+//    @GetMapping("/login")
+//    public String getLoginPage(Model model) {
+//        SecurityContext context = SecurityContextHolder.getContext();
+//        model.addAttribute("message", "logged in as: " + context.getAuthentication().getName());
+//        model.addAttribute("index", toDoService.getToDo());
+//    return "login";
+//    }
 
 }
